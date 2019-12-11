@@ -60,7 +60,8 @@ namespace Advent_Of_Code
         }
         private static void dayFour(string input)
         {
-            ConsoleHelper.WriteLine(new Day4.Challenge1().Run(input));
+            ConsoleHelper.WriteLine(new Day4.Challenge1().Run(input, false));
+            ConsoleHelper.WriteLine(new Day4.Challenge1().Run(input, true));
         }
     }
 }
