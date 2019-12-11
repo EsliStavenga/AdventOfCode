@@ -6,23 +6,28 @@ namespace Day4
 {
     public class Challenge1
     {
-
-        public string Run(string input)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="groupOfExactlyTwo">Should there be at least one group of exactly 2 digits? (Challenge 2)</param>
+        /// <returns></returns>
+        public string Run(string input, bool groupOfExactlyTwo = true)
         {
             string[] limits = input.Split('-');
             int lowerLimit = int.Parse(limits[0]);
             int upperLimit = int.Parse(limits[1]);
             
-            return calculateNumbersInRange(lowerLimit, upperLimit).ToString();
+            return calculateNumbersInRange(lowerLimit, upperLimit, groupOfExactlyTwo).ToString();
         }
 
-        private int calculateNumbersInRange(int lowerLimit, int upperLimit)
+        private int calculateNumbersInRange(int lowerLimit, int upperLimit, bool strict = true)
         {
             int options = 0;
 
             for(int i = lowerLimit; i < upperLimit; i++)
             {
-                if(areDigitsDescending(i) && numberContainsDoubleDigit(i))
+                if(areDigitsDescending(i) && numberContainsDoubleDigit(i, strict))
                 {
                     options++;
                 }
@@ -32,11 +37,11 @@ namespace Day4
 
         }
 
-        private bool numberContainsDoubleDigit(int number)        
+        private bool numberContainsDoubleDigit(int number, bool strict = true)        
         {
             IEnumerable<int> numCount = number.ToString().ToCharArray().GroupBy(x => x).Select(x => x.Count());
 
-            return numCount.Where(x => x == 2).Count() > 0;
+            return numCount.Where(x => (strict ? x == 2 : x >= 2)).Count() > 0;
         }
 
         private bool areDigitsDescending(int number)
