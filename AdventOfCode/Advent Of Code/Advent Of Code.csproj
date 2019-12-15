@@ -19,6 +19,9 @@
     <Reference Include="Day4">
       <HintPath>..\..\Day4\Day4\bin\Debug\netstandard2.0\Day4.dll</HintPath>
     </Reference>
+    <Reference Include="IntcodeComputer">
+      <HintPath>..\..\IntcodeComputer\IntcodeComputer\bin\Debug\netstandard2.0\IntcodeComputer.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +36,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="input\4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="input\5.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="input\_2.txt">
