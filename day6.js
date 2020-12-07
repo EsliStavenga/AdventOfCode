@@ -1,4 +1,4 @@
-let answersPerGroup = `jmqnkzlsfedaptx
+const _answersPerGroup = `jmqnkzlsfedaptx
 usjfkadqwmeyilph
 
 lodbmhvcaset
@@ -2051,7 +2051,7 @@ hv`;
 
 //part 1
 let totalCount = 0; //total count of answers where ANYONE has answered yes
-answersPerGroup = answersPerGroup.split('\n\n').map(x => x.split('\n').join(''));
+answersPerGroup = _answersPerGroup.split('\n\n').map(x => x.split('\n').join(''));
 
 //method 1
 //loop over every answer per group
@@ -2068,7 +2068,7 @@ console.log(totalCount);
 
 //part 2
 let totalCount = 0; //total count of answers where EVERYONE has answered yes
-answersPerGroup = answersPerGroup.split('\n\n').map(x => x.split('\n'));
+answersPerGroup = _answersPerGroup.split('\n\n').map(x => x.split('\n'));
 
 answersPerGroup.forEach(group => {
 	let groupCount = group.length; //get amount of ppl in group
